@@ -1,20 +1,10 @@
-# PHPLoops
+# COMP 3015, Lab 1
 
-## Run from terminal:
+### Running the program using the built-in PHP development server:
 
 ```
-php main.php
+php -S localhost:8000
 ```
 
-### Mini Challenge
+With the above command running you should then be able to access http://localhost:8000/main.php in your web browser.
 
-What if we have a show with multiple associated dates?
-```
-$shows = [
-     'Seinfeld' => ['July 5th, 1989 - May 14th, 1998'],
-     'Curb Your Enthusiasm' => ['October 15th, 2000 - Current'],
-     'The Simpsons' => ['December 17, 1989 - Current'],
-     'Futurama' => ['March 28, 1999 - August 10, 2003', 'March 23, 2008 - September 4, 2013'],
-];
-```
-Can we loop through this? Try it. Notice each value in `$shows` is an array now, instead of a string.
