@@ -53,19 +53,8 @@ class BookRepository {
 		$books = $this->getAllBooks();
 		$books[] = $book;
 		
-		$associativeArray = array();
-		foreach ($books as $book) {
-			$associativeArray[] = array(
-				'name' => $book->getName(),
-				'authorName' => $book->getAuthor(),
-				'isbn' => $book->getInternationalStandardBookNumber()
-			);
-		}
-		$booksJson = json_encode($associativeArray, JSON_PRETTY_PRINT);
-		echo $booksJson;
+		$booksJson = json_encode($books, JSON_PRETTY_PRINT);
 		file_put_contents($this->filename, $booksJson);
-
-
 
 	}
 
@@ -119,15 +108,8 @@ class BookRepository {
 				$books[$index] = $newBook;
 			}
 		}
-		$associativeArray = array();
-		foreach ($books as $book) {
-			$associativeArray[] = array(
-				'name' => $book->getName(),
-				'authorName' => $book->getAuthor(),
-				'isbn' => $book->getInternationalStandardBookNumber()
-			);
-		}
-		$booksJson = json_encode($associativeArray, JSON_PRETTY_PRINT);
+
+		$booksJson = json_encode($books, JSON_PRETTY_PRINT);
 		file_put_contents($this->filename, $booksJson);
 	}
 
@@ -144,15 +126,8 @@ class BookRepository {
 				unset($books[$index]);
 			}
 		}
-		$associativeArray = array();
-		foreach ($books as $book) {
-			$associativeArray[] = array(
-				'name' => $book->getName(),
-				'authorName' => $book->getAuthor(),
-				'isbn' => $book->getInternationalStandardBookNumber()
-			);
-		}
-		$booksJson = json_encode($associativeArray, JSON_PRETTY_PRINT);
+
+		$booksJson = json_encode($books, JSON_PRETTY_PRINT);
 		file_put_contents($this->filename, $booksJson);
 	}
 
